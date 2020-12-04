@@ -52,7 +52,6 @@ HotelStay hotelStay = new HotelStay()
 ```
 HotelManager hotelManager = new HotelManager();
 hotelManager.calculateStay(hotelStay);
-
 ```
 
 - O cálculo utiliza o tipo BigDecimal para lidar com arredondamentos;
@@ -75,14 +74,12 @@ mvn clean package install
 
 ```
 mvn spring-boot:run
-
 ```
 
 3) Acessar a URL do swagger (OPCIONAL)
 
 ```
 http://localhost:5000/swagger-ui.html
-
 ```
 
 ### Endpoints
