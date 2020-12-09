@@ -2,13 +2,13 @@ package interfaces;
 
 import java.math.BigDecimal;
 
-import model.HotelStay;
+import model.SimpleHotelStayModel;
 
 public interface HotelStayCalculator {
 
-    BigDecimal calculatePaymentValue(HotelStay hotelStay);
+    BigDecimal calculatePaymentValue(HotelStayModelSelector hotelStayModelSelector);
 
-    BigDecimal calculateCosts(HotelStay hotelStay);
+    BigDecimal calculateCosts(HotelStayModelSelector hotelStayModelSelector);
 
     BigDecimal calculateTaxes(BigDecimal costs);
 }

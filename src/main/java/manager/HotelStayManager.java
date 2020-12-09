@@ -2,17 +2,29 @@ package manager;
 
 import java.math.BigDecimal;
 
+import abstractfatory.DefaultHotelStayCalculator;
 import interfaces.HotelStayCalculator;
-import model.HotelStay;
-import services.DefaultHotelStayCalculator;
+import interfaces.HotelStayModelSelector;
 
 public class HotelStayManager {
+    private static HotelStayManager hotelStayManager;
 
-    public BigDecimal calculateStay(HotelStay hotelStay) {
-        return calculateStay(hotelStay, new DefaultHotelStayCalculator());
+    private HotelStayManager() {
     }
 
-    public BigDecimal calculateStay(HotelStay hotelStay, HotelStayCalculator hotelStayCalculator) {
-        return hotelStayCalculator.calculatePaymentValue(hotelStay);
+    private static class SingletonHelper {
+        private static final HotelStayManager hotelStayManager = new HotelStayManager();
+    }
+
+    public static HotelStayManager getInstance() {
+        return SingletonHelper.hotelStayManager;
+    }
+
+    public BigDecimal calculateStay(HotelStayModelSelector hotelStayModelSelector) {
+        return calculateCustomStay(hotelStayModelSelector, new DefaultHotelStayCalculator());
+    }
+
+    public BigDecimal calculateCustomStay(HotelStayModelSelector hotelStayModelSelector, HotelStayCalculator hotelStayCalculator) {
+        return hotelStayCalculator.calculatePaymentValue(hotelStayModelSelector);
     }
 }
