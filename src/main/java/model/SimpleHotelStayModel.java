@@ -32,6 +32,10 @@ public class SimpleHotelStayModel extends HotelStayModel implements HotelStayMod
         return this;
     }
 
+    public SimpleHotelStayModel clone() throws CloneNotSupportedException {
+        return (SimpleHotelStayModel)super.clone();
+    }
+
     @Override
     public SimpleHotelStayModel getSimpleModel() {
         return this;

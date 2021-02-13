@@ -8,8 +8,6 @@ import java.math.RoundingMode;
 import org.junit.Test;
 
 import abstractfatory.CustomHotelStayCalculator;
-import abstractfatory.DefaultHotelStayCalculator;
-import abstractfatory.HotelStayCalculatorServicesInjector;
 import constants.HotelStayConstants;
 import helper.HotelStayHelper;
 import model.CustomHotelStayModel;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import interfaces.HotelStayModelSelector;
 
-public class CustomHotelStayModel extends HotelStayModel implements HotelStayModelSelector {
+public class CustomHotelStayModel extends HotelStayModel implements HotelStayModelSelector, Cloneable {
     private double costPerHour;
     private LocalDateTime checkIn;
     private LocalDateTime checkout;
@@ -42,6 +42,10 @@ public class CustomHotelStayModel extends HotelStayModel implements HotelStayMod
     public CustomHotelStayModel setCheckout(LocalDateTime checkout) {
         this.checkout = checkout;
         return this;
+    }
+
+    public CustomHotelStayModel clone() throws CloneNotSupportedException {
+        return (CustomHotelStayModel)super.clone();
     }
 
     @Override
