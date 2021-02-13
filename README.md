@@ -16,6 +16,8 @@ No repositorio indicar como é realizada a integração/reuso do componente.
 No dia de aula apresentar funcionando o componente reutilizavel.
 Arquivo pdf  somente com o link do repositorio para posterior acesso.
 
+## Padrão GOF, material de apoio --> https://www.devmedia.com.br/implementando-padroes-criacionais-em-java/34185
+
 ## Instruções de execução e uso da aplicação
 
 - Para utilizar esse componente, basta seguir esses passos:
