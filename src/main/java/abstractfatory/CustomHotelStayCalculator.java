@@ -25,6 +25,6 @@ public class CustomHotelStayCalculator extends HotelStayCalculatorServicesInject
 
     @Override
     public BigDecimal calculateTaxes(BigDecimal costs) {
-        return null;
+        return costs.multiply(new BigDecimal(HotelStayConstants.FIXED_TAX));
     }
 }

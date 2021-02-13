@@ -23,6 +23,10 @@ public class HotelStayCreateDto {
     @ApiModelProperty(value = "${stay.create.guestExpensesList}")
     private List<Double> guestExpensesList;
 
+    @NotNull
+    @ApiModelProperty(value = "${stay.create.costPerHour}")
+    private Double costPerHour;
+
     public Integer getNights() {
         return nights;
     }
@@ -47,6 +51,15 @@ public class HotelStayCreateDto {
 
     public HotelStayCreateDto setGuestExpensesList(List<Double> guestExpensesList) {
         this.guestExpensesList = guestExpensesList;
+        return this;
+    }
+
+    public Double getCostPerHour() {
+        return costPerHour;
+    }
+
+    public HotelStayCreateDto setCostPerHour(Double costPerHour) {
+        this.costPerHour = costPerHour;
         return this;
     }
 }

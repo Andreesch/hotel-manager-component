@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.andreschneider.hotelmanagerspring.api.dto.HotelStayByHourCreateDto;
 import com.andreschneider.hotelmanagerspring.api.dto.HotelStayCreateDto;
 import com.andreschneider.hotelmanagerspring.api.dto.HotelStayPaymentResponseDto;
 import com.andreschneider.hotelmanagerspring.services.HotelStayService;
@@ -38,6 +39,17 @@ public class StayController {
     public HotelStayPaymentResponseDto calculate(
             @ApiParam(value = "${v1.stay}", required = true) @RequestBody @Valid HotelStayCreateDto hotelStayCreateDto) {
         return hotelStayService.calculatePaymentValue(hotelStayCreateDto);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(value="/by-hour", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "${v1.stay.calculate.byHour}")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Successful request with body content", response = HotelStayPaymentResponseDto.class),
+    })
+    public HotelStayPaymentResponseDto calculate(
+            @ApiParam(value = "${v1.stay}", required = true) @RequestBody @Valid HotelStayByHourCreateDto hotelStayByHourCreateDto) {
+        return hotelStayService.calculatePaymentValueByHour(hotelStayByHourCreateDto);
     }
 }
 

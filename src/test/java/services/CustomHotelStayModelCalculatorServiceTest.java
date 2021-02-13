@@ -25,7 +25,7 @@ public class CustomHotelStayModelCalculatorServiceTest {
     public void assertCostCalculator() {
         CustomHotelStayModel customHotelStayModel = HotelStayHelper.generateCustomHotelStayModel();
 
-        BigDecimal expectedValue = new BigDecimal(177.14)
+        BigDecimal expectedValue = new BigDecimal(34)
                 .setScale(HotelStayConstants.DEFAULT_SCALE, RoundingMode.HALF_EVEN);
 
         BigDecimal calculatedCost = hotelStayCostService.calculateCosts(customHotelStayModel);

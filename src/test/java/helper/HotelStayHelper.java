@@ -19,7 +19,7 @@ public class HotelStayHelper {
         LocalDateTime checkIn = LocalDateTime.of(2020, Month.NOVEMBER, 1, 8, 30, 0);
         LocalDateTime checkOut = LocalDateTime.of(2020, Month.NOVEMBER, 2, 18, 30, 0);
 
-        return new CustomHotelStayModel(generateDefaultGuestExpensesList(), 5.21, checkIn, checkOut);
+        return new CustomHotelStayModel(generateDefaultGuestExpensesList(), 1, checkIn, checkOut);
     }
 
     public static List<Double> generateDefaultGuestExpensesList() {

@@ -41,7 +41,7 @@ mvn clean package install
 3) Instanciar uma classe do tipo "HotelStay"
 
 ```
-HotelStay hotelStay = new HotelStay()
+HotelStay simpleHotelStayModel = new HotelStay()
                 .setNights(2()) // número de noites
                 .setCostPerNight(120) // custo por noite
                 .setGuestExpensesList(Arrays.asList(4.50, 66)) // lista de despesas;
@@ -51,7 +51,7 @@ HotelStay hotelStay = new HotelStay()
 
 ```
 HotelManager hotelManager = new HotelManager();
-hotelManager.calculateStay(hotelStay);
+hotelManager.calculateStay(simpleHotelStayModel);
 ```
 
 - O cálculo utiliza o tipo BigDecimal para lidar com arredondamentos;
