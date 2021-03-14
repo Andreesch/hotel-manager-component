@@ -3,6 +3,7 @@ package com.andreschneider.hotelmanagerspring.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,6 +17,10 @@ public class User {
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private String id;
+
+//    @Id
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
+//    private String id;
 
     @Column(name = "EMAIL", nullable = false)
     private String email;
